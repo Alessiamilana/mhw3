@@ -1,0 +1,287 @@
+body {
+    background-image: url('https://img.freepik.com/premium-photo/van-gogh-starry-night-painting-style_984314-985.jpg'),url('https://hips.hearstapps.com/hmg-prod/images/colazione-sull-erba-manet-6414441110a03.jpg'),url('https://restaurars.altervista.org/wp-content/uploads/2016/05/Van_Gogh-11.jpg'),url('https://cdn.pixabay.com/photo/2019/07/24/02/30/klimt-4359075_960_720.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 95vh;
+    overflow-y: auto;
+    position: relative; 
+    
+    
+}
+
+.navbar {
+    display: flex;
+ 
+    align-items: center;
+    color: #666666;
+    padding-top: 2.5rem;
+    justify-content: space-between;
+    gap: 10px; /*da un po di spazio fra i fle item*/
+   
+    
+    
+}
+
+.navElements {
+    
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #EEF1F6;
+    margin-right: 10px;
+    
+}
+   
+
+
+.navElements:last-child {
+    padding-right:50px; /* Imposta il padding a destra sull'ultimo elemento per spostare tutti gli altri a sinistra */
+  }
+
+#home {
+    
+    color: #EEF1F6;
+    font-family: "Cinzel", sans-serif;
+    font-style: normal;
+    font-size: 40px;
+    letter-spacing: 2px;
+    margin-right: auto;
+    padding-left: 100px;
+}
+
+footer {
+    background-color: #FFFFFF;
+    text-align: center;
+    padding: 28px;
+    position: absolute;
+    bottom: -200px;
+    left: 0;
+    right: 0;
+    
+}
+
+
+footer span {
+    display: block;
+    padding: 0px 0px 7px 0px;
+    font-family: "Work Sans", sans-serif;
+    color: #919191;
+    font-weight: 43;
+    font-size: 12px;
+}
+
+
+@media screen and (max-width: 800px) {
+
+    .navbar {
+        flex-direction: column; 
+        padding-top: 0.5rem; 
+    }
+
+    .navElements {
+        padding: 0.5rem; 
+    }
+
+    #home {
+        padding: 0.5rem 0; 
+    }
+}
+
+@media screen and (max-width: 200px) {
+
+    #home {
+        font-size: 10px;
+    }
+    footer span {
+        font-size: 9px;
+    }
+    .navElements {
+        font-size: 9px;
+    }
+
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+footer h1 {
+    font-weight: 100;
+    font-size: 10px;
+    color: #333;
+    font-family: "Work Sans", sans-serif;
+}
+
+footer span:nth-child(2):hover {
+    color: black;
+    cursor: pointer;
+}
+
+
+
+.menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    
+}
+
+.menu a,
+.menu li{
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 300;
+
+}
+
+
+.menu li{
+margin-left: -40px;
+}
+/*solo per le scritte della gallery e sculptures voglio che si spostano piu a sinistra*/
+
+.menu a:hover,
+.menu li:hover {
+    background-color: #f0f0f0; 
+}
+ 
+
+
+
+
+
+#result-view {
+    display: flex; 
+    
+}
+
+/* Stile per ogni singolo artwork */
+.artwork {
+margin-right: 50px; /* Aggiungo spazio tra gli elementi */
+margin-top: 45px;
+
+}
+
+.artwork h3 {
+font-weight: 300; /* Imposto lo stile del testo come sottile */
+color: white;
+}
+
+
+.show-background {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    overflow-x: auto;
+    height: 32.7em;
+    display: inline-block; /* Imposto il display a inline-block per adattare al contenuto*/ 
+}
+
+
+
+
+.sculpture{
+    margin-right: 50px; /* Aggiungo spazio tra gli elementi */
+    margin-top: 45px;
+}
+
+.sculpture h3{
+    font-weight: 300; /* Imposto lo stile del testo come sottile */
+    color: white;
+}
+
+.sculpture img {
+    max-width: 200px; /* Imposto la larghezza massima dell'immagine */
+    max-height: 200px; /* Imposto l'altezza massima dell'immagine */
+    width: auto; /* Imposto la larghezza automatica per mantenere l'aspetto originale */
+    height: auto; /* Imposto l'altezza automatica per mantenere l'aspetto originale */
+}
+
+
+/* Stile per schermo più piccolo */
+@media screen and (max-width: 800px) {
+    .artwork,
+    .sculpture {
+        margin-right: 20px; /* Riduco lo spazio tra gli elementi */
+        margin-top: 20px; /* Riduco lo spazio tra gli elementi */
+    }
+
+    .show-background{
+        flex-direction: column; /* Imposto la direzione dei flessi a colonna */
+        align-items: center; /* Allineo gli elementi al centro */
+        background-color:aquamarine;
+    }
+    /*nascondo il footer per rendere piu visibili le immagini*/
+    footer {
+        display: none;
+    }
+}
+
+
+/* Stile per schermi molto piccoli */
+@media screen and (max-width: 400px) {
+    .artwork,
+    .sculpture {
+        margin-right: 10px; /* Riduco ulteriormente lo spazio tra gli elementi */
+        margin-top: 10px; /* Riduco ulteriormente lo spazio tra gli elementi */
+    }
+    .artwork img,
+    .sculpture img {
+        max-width: 150px; /* Imposto la larghezza massima dell'immagine su schermi molto piccoli */
+        max-height: 150px; /* Imposto l'altezza massima dell'immagine su schermi molto piccoli */
+    }
+    .show-background{
+        padding: 10px;
+    }
+   
+}
+
+
+article {
+	margin: -13px 0;
+	background-color: rgba(0,0,0,0.1);
+	width: 66%;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+}
+
+
+
+#modale.hidden {
+	display: none; 
+}
+
+#modale {
+    position: fixed;
+    top: 0; /* Imposto il top a 0 per far comparire la modale in alto */
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+}
+
+
+#modale img {
+	height: 70%;
+	border: 1px solid black;
+    margin-left: -40px;
+}
+
+.no-scroll {
+	overflow: hidden;
+}
+
+
